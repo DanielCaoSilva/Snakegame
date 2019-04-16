@@ -1,9 +1,5 @@
 // SFML_Test.cpp : snake game 
 
-
-
-//#include "stdafx.h" 
-
 #include <SFML/Graphics.hpp>   //using namespace sf 
 
 #include <time.h> 
@@ -63,7 +59,6 @@ struct Fruit
 void move() {
 
 
-
 	//1st update body so everything updates in proper order 
 
 	//move the body only!  s[0] = head will not be changed here 
@@ -111,25 +106,25 @@ void move() {
 
 		s[0].x += 1;
 
-	//if user presses up 
+	//if user2 presses w 
 
 	if (direction == 4)
 
 		s1[0].y -= 1;
 
-	//if user presses down 
+	//if user2 presses s 
 
 	if (direction == 5)
 
 		s1[0].y += 1;
 
-	//if user presses left 
+	//if user2 presses a 
 
 	if (direction == 6)
 
 		s1[0].x -= 1;
 
-	//if user presses right 
+	//if user2 presses d
 
 	if (direction == 7)
 
@@ -260,7 +255,7 @@ int main()
 
 {
 
-	//Setting pseudorandom time, TODO:discuss true random vs pseudorandom  
+	//Setting pseudorandom time,   
 
 	srand(time(0));
 
@@ -315,12 +310,6 @@ int main()
 	while (window.isOpen())
 
 	{
-
-		//Error in class I placed this before the while loop 
-
-		//Should be placed in while loop as shown here to update 
-
-		//timer  
 
 		float time = clock.getElapsedTime().asSeconds();
 
@@ -445,11 +434,11 @@ int main()
 
 		{
 
-			//position sprite2 one at a time 
+			//position sprite4 one at a time 
 
 			sprite4.setPosition(s1[i].x * size, s1[i].y * size);
 
-			//Draw sprite2 one at a time by drawing over background 
+			//Draw sprite4 one at a time by drawing over background 
 
 			window.draw(sprite4);
 
