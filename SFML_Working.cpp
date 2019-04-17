@@ -22,7 +22,8 @@ int h = size * num_vertBox;    //background number of pixels in height
 
 //Snake variables to dertermine length and direction 
 
-int direction;    //direction the snake is moving  
+int direction; 
+int direction1;//direction the snake is moving  
 
 int snake_length = 4; //initial size is 4  
 int snake_length1 = 4;
@@ -108,25 +109,25 @@ void move() {
 
 	//if user2 presses w 
 
-	if (direction == 4)
+	if (direction1 == 4)
 
 		s1[0].y -= 1;
 
 	//if user2 presses s 
 
-	if (direction == 5)
+	if (direction1 == 5)
 
 		s1[0].y += 1;
 
 	//if user2 presses a 
 
-	if (direction == 6)
+	if (direction1 == 6)
 
 		s1[0].x -= 1;
 
 	//if user2 presses d
 
-	if (direction == 7)
+	if (direction1 == 7)
 
 		s1[0].x += 1;
 
@@ -221,7 +222,6 @@ void move() {
 	//***NEW*** Check if you eat body of snake 
 
 	for (int i = 1; i < snake_length; i++)
-
 	{
 
 		//Cut Snake body from place eaten 
@@ -237,6 +237,7 @@ void move() {
 	}
 	for (int i = 1; i < snake_length1; i++)
 	{
+		//Cut Snake body from place eaten
 		if (s1[0].x == s1[i].x && s1[0].y == s1[i].y)
 
 		{
@@ -355,13 +356,13 @@ int main()
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) direction = 3;
 
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) direction = 4;
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) direction1 = 4;
 
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) direction = 5;
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) direction1 = 5;
 
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) direction = 6;
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) direction1 = 6;
 
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) direction = 7;
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) direction1 = 7;
 
 
 
